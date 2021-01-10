@@ -1,5 +1,6 @@
 import React from "react";
 import Head from 'next/head';
+import Button from '../components/Button';
 
 export default function Home() {
     return (
@@ -10,7 +11,7 @@ export default function Home() {
             <main
                 className='bg-gray-200 h-screen'
             >
-                test
+                <Button>testtttttttttt</Button>
             </main>
         </div>
     );
