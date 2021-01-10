@@ -1,8 +1,10 @@
 import React from "react";
 import Head from 'next/head';
 import Button from '../components/Button';
+import { useAppContext } from "../components/Contexts/AppContext";
 
 export default function Home() {
+    const states = useAppContext();
     return (
         <div>
             <Head>
@@ -11,7 +13,10 @@ export default function Home() {
             <main
                 className='bg-gray-200 h-screen'
             >
-                <Button>testtttttttttt</Button>
+                {states.counter}
+                <Button
+                    onClick={() => states.increaseCounter()}
+                >testtttttttttt</Button>
             </main>
         </div>
     );

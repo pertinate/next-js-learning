@@ -1,11 +1,12 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 interface Props {
     children: React.ReactNode;
 }
 
-const appContext = createContext({
-
+export const appContext = createContext({
+    counter: 0,
+    increaseCounter: () => { }
 });
 
 function AppContext(props: Props) {
@@ -19,8 +20,11 @@ function AppContext(props: Props) {
 }
 
 const sharedState = () => {
-    return {
+    const [counter, setCounter] = useState(1);
 
+    return {
+        counter,
+        increaseCounter: () => setCounter(counter + 1)
     };
 };
 

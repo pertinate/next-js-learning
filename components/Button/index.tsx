@@ -1,14 +1,19 @@
 import React from 'react';
 
-interface Props {
+interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     children: React.ReactNode;
 }
 
 function Index(props: Props) {
-    const { } = props;
+    const {
+        children,
+        ...rest
+    } = props;
 
     return (
-        <button>
+        <button
+            {...rest}
+        >
             {props.children}
         </button>
     );
